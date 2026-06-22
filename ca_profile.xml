@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <CommunityApplications>
-  <Profile>Unraid template for auto-mcs, a cross-platform Minecraft server manager that creates and runs servers (Vanilla, Paper, Fabric, Forge, and more) in under a minute, with a browser-based web terminal UI.</Profile>
+  <Profile>auto-mcs is a cross-platform Minecraft server manager that creates and runs servers (Vanilla, Paper, Fabric, Forge, and more) in under a minute, with a browser-based web terminal UI.</Profile>
   <Icon>https://raw.githubusercontent.com/YoshiroMaximus/automcs-unraid-template/main/auto-mcs.png</Icon>
   <WebPage>https://github.com/YoshiroMaximus/automcs-unraid-template</WebPage>
   <Forum>https://github.com/YoshiroMaximus/automcs-unraid-template/issues</Forum>
