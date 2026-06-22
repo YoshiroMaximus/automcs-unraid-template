@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>auto-mcs</Name>
+  <Repository>macarooniman/auto-mcs:latest</Repository>
+  <Registry>https://hub.docker.com/r/macarooniman/auto-mcs</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/macarooni-man/auto-mcs/issues</Support>
+  <Project>https://www.auto-mcs.com/</Project>
+  <Overview>auto-mcs is a cross-platform Minecraft server manager that creates and manages servers (Vanilla, Paper, Fabric, Forge, and more) in under a minute, with Modrinth mod/plugin browsing, automatic backups, and a scripting console.&#13;
+&#13;
+This container exposes the auto-mcs interface as a web terminal (ttyd) on the Web UI port. Manage everything from your browser &#8212; no desktop client needed.&#13;
+&#13;
+SECURITY: The default login is root / auto-mcs. Change the WEB_PASSWORD (and ideally WEB_USERNAME) before exposing this container, especially beyond your LAN. The web terminal grants shell access inside the container.&#13;
+&#13;
+PORTS: 8080 is the web UI, 7001 is the Telepath remote-management API, and 25565 is the default port for the Minecraft server auto-mcs runs. If you create servers on other ports, add matching port mappings here.&#13;
+&#13;
+TIP: If Crafty Controller or another Minecraft server already uses port 25565, change the host port here to something free (e.g. 30000).</Overview>
+  <Category>GameServers:</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/YoshiroMaximus/automcs-unraid-template/main/auto-mcs.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/YoshiroMaximus/automcs-unraid-template/main/auto-mcs.png</Icon>
+  <ExtraParams>--security-opt=no-new-privileges:true</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Changes>### 2026-06-21
+- Initial template for auto-mcs.
+- Self-hosted icon, no-new-privileges hardening.
+- Web UI (ttyd), Telepath API, and default Minecraft port mapped.
+- Default credentials surfaced as variables with the password masked and a warning to change it.
+</Changes>
+  <Config Name="App Data" Target="/root/.auto-mcs" Default="/mnt/user/appdata/auto-mcs" Mode="rw" Description="auto-mcs configuration, all managed servers, world files, and backups." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/auto-mcs</Config>
+  <Config Name="Web UI Port" Target="8080" Default="8080" Mode="tcp" Description="Browser interface (ttyd web terminal). If you change this, also set the WEB_PORT variable to the same value." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Minecraft Server Port" Target="25565" Default="25565" Mode="tcp" Description="Default port for the Minecraft server auto-mcs runs. Change the host port if Crafty or another server already uses 25565. Add more port mappings for additional servers." Type="Port" Display="always" Required="true" Mask="false">25565</Config>
+  <Config Name="Telepath API Port" Target="7001" Default="7001" Mode="tcp" Description="Optional Telepath remote-management API. Only expose this if you use Telepath; keep it off your WAN." Type="Port" Display="advanced" Required="false" Mask="false">7001</Config>
+  <Config Name="WEB_USERNAME" Target="WEB_USERNAME" Default="root" Mode="" Description="Username for the web UI login. Default: root." Type="Variable" Display="always" Required="true" Mask="false">root</Config>
+  <Config Name="WEB_PASSWORD" Target="WEB_PASSWORD" Default="auto-mcs" Mode="" Description="Password for the web UI login. CHANGE THIS from the default before exposing the container." Type="Variable" Display="always" Required="true" Mask="true">auto-mcs</Config>
+  <Config Name="WEB_PORT" Target="WEB_PORT" Default="8080" Mode="" Description="Internal port the web UI listens on. Must match the container side of the Web UI Port mapping above. Leave at 8080 unless you know why you're changing it." Type="Variable" Display="advanced" Required="false" Mask="false">8080</Config>
+  <Config Name="TZ" Target="TZ" Default="UTC" Mode="" Description="Timezone for log timestamps, e.g. America/New_York. Defaults to UTC." Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
+</Container>
