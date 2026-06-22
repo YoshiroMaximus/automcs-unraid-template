@@ -4,7 +4,7 @@
 [![Image](https://img.shields.io/badge/docker.io-macarooniman%2Fauto--mcs-2496ed?logo=docker&logoColor=white)](https://hub.docker.com/r/macarooniman/auto-mcs)
 [![License](https://img.shields.io/github/license/YoshiroMaximus/automcs-unraid-template)](LICENSE)
 
-Unraid Community Apps template for [**auto-mcs**](https://www.auto-mcs.com/) — a cross-platform Minecraft server manager that spins up Vanilla, Paper, Fabric, Forge (and more) servers in under a minute, with Modrinth mod/plugin browsing, automatic backups, and a scripting console. This container exposes it as a browser-based web terminal — no desktop client needed.
+Unraid Community Apps template for [**auto-mcs**](https://www.auto-mcs.com/) — a cross-platform Minecraft server manager that creates and runs servers (Vanilla, Paper, Fabric, Forge, and more) in under a minute, with mod/plugin management, automatic backups, and a scripting console. This container exposes it as a browser-based web terminal — no desktop client needed.
 
 ## Install
 

@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/macarooni-man/auto-mcs/issues</Support>
   <Project>https://www.auto-mcs.com/</Project>
-  <Overview>auto-mcs is a cross-platform Minecraft server manager that creates and manages servers (Vanilla, Paper, Fabric, Forge, and more) in under a minute, with Modrinth mod/plugin browsing, automatic backups, and a scripting console.&#13;
+  <Overview>auto-mcs is a cross-platform Minecraft server manager that creates and runs servers (Vanilla, Paper, Fabric, Forge, and more) in under a minute, with mod/plugin management, automatic backups, and a scripting console.&#13;
 &#13;
 This container exposes the auto-mcs interface as a web terminal (ttyd) on the Web UI port. Manage everything from your browser &#8212; no desktop client needed.&#13;
 &#13;
